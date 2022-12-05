@@ -1,0 +1,72 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <title>Sign-Up</title> 
+      <style>
+          *{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+.Sign-Up{
+    width: 350px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    color:rgb(94, 219, 21);
+}
+.Sign-Up h1{
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 40px 0
+}
+.Sign-Up p {1```
+    font-size: 20px;
+    margin: 15px 0;
+}
+.Sign-Up input {
+    font-size: 16px;
+    width: 100%;
+    padding: 15px 10px;
+    border: 0;
+    outline: none;
+    border-radius: 5px;
+}
+.Sign-Up button {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px 0px;
+    padding: 10px 15px;
+    width: 50%;
+    border-radius: 5px;
+    border: 15px;
+}
+      </style>
+    </head> 
+    <body style="background-color:black;">
+
+    <form action="register/" method="post">
+
+        {% csrf_token %}
+        <div class="Sign-Up">
+            <h1>Sign-Up</h1> 
+
+
+            <p>First Name</p> 
+            <input type="text" name="Fname" placeholder="enter name" required>
+            <p>Last Name</p> 
+            <input type="text" name="lname" placeholder="enter name"required>
+            <p>E-mail</p> 
+            <input type="text" name="email" placeholder="enter e-mail"required>
+            <p>Password</p> 
+            <input type="password" name="password" placeholder="enter password"required>
+            <p> Mobilenumber</p>
+            <input type="number" name="number" placeholder="enter mobilenumber"required>
+            <button type="submit">Register</button>
+
+        </div>
+        </form>
+    </body> 
+</html>

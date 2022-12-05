@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Databases</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    }
+    .banner{
+    width: 100%;
+    height: 100vh;
+    background-image: linear
+    gradient (rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(background.jpg);
+    background-size: cover;
+    background-position: centerI
+    }
+    .navbar {
+        width: 85%;
+        margin: auto;
+        padding: 35px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between
+        }
+        .navbar ul li{
+        list-style: none;
+        display: inline-block;
+        margin: 0 15px;
+        }
+    .banner{
+        background-image:url('/static/Images/comp.jpg') ;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    .navbar ul li{
+list-style: none;
+display: inline-block;
+margin: 0 20px;
+position: relative;
+}
+.navbar ul li a{
+text-decoration: none;
+color: #fff;
+text-transform: uppercase;
+}
+.navbar ul li::after{
+content: '';
+height: 3px;
+width: 0;
+background: #009688;
+position: absolute;
+left: 0;
+bottom: -10px;
+transition: 0.5s;
+}
+.navbar ul li:hover::after{
+width: 100%;
+}
+*{
+ margin:0;
+ padding: 0;
+ outline: 0;
+}
+.filter{
+ position: absolute;
+ left: 0;
+ top: 0;
+ bottom: 0;
+ right: 0;
+ z-index: 1;
+ background: rgb(233,76,161);
+background: -moz-linear-gradient(90deg, rgba(233,76,161,1) 0%, rgba(199,74,233,1) 100%);
+background: -webkit-linear-gradient(90deg, rgba(233,76,161,1) 0%, rgba(199,74,233,1) 100%);
+background: linear-gradient(90deg, rgba(233,76,161,1) 0%, rgba(199,74,233,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e94ca1",endColorstr="#c74ae9",GradientType=1);
+opacity: .7;
+}
+table{
+ position: absolute;
+ z-index: 2;
+ left: 50%;
+ top: 50%;
+ transform: translate(-50%,-50%);
+ width: 60%;
+ border-collapse: collapse;
+ border-spacing: 0;
+ box-shadow: 0 2px 15px rgba(64,64,64,.7);
+ border-radius: 12px 12px 0 0;
+ overflow: hidden;
+
+}
+td , th{
+ padding: 15px 20px;
+ text-align: center;
+
+
+}
+th{
+ background-color: black;
+ color: white;
+ font-family: 'Open Sans',Sans-serif;
+ font-weight: 200;
+ text-transform: uppercase;
+
+}
+td{
+ width: 100%;
+ background-color: #9e9c9c;
+ font-family: 'Montserrat', sans-serif;
+}
+tr:nth-child(even){
+ background-color: #eeeeee;
+}
+</style>
+</head>
+<body style="background-color: black;">
+
+<div class="banner">
+<div class="navbar">
+<img src="/static/Images/prof.jpg" alt="" style="height:5% ; width:5%">
+<ul>
+<li><a href="http://127.0.0.1:8000/">HOME</a></li>
+</ul>
+</div>
+        <h3 style="color:white; text-align:center">USER DATABASE</h3>
+</div>
+<table border="1" align="center">
+    <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>email</th>
+        <th>password</th>
+
+    </tr>
+    {%for x in members%}
+<tr>
+    <td style="color:white;">{{x.Firstname}}</td>
+    <td style="color:white;">{{x.lastname}}</td>
+    <td style="color:white;">{{x.email}}</td>
+    <td style="color:white;">{{x.password}}</td>
+
+</tr>
+{% endfor %}
+
+</table>
+</body>
+</html>
